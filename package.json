@@ -1,0 +1,41 @@
+{
+  "name": "handoff-pack",
+  "version": "0.1.0",
+  "description": "Multi-model Agent context handoff packet CLI — compress OpenAI-compatible messages into a paste-ready resume pack for the next model.",
+  "type": "module",
+  "bin": {
+    "handoff-pack": "./bin/handoff-pack.js"
+  },
+  "scripts": {
+    "start": "node ./bin/handoff-pack.js",
+    "test": "node --test test/pack.test.js",
+    "pack": "node ./bin/handoff-pack.js pack examples/session.messages.json",
+    "preview": "node ./bin/handoff-pack.js preview examples/session.messages.json",
+    "demo": "node ./bin/handoff-pack.js pack examples/session.messages.json --max-tokens 1200 --out examples/RESUME.md",
+    "demo:long": "node ./bin/handoff-pack.js pack examples/long.session.json --max-tokens 200 --out examples/RESUME.long.md && node ./bin/handoff-pack.js preview examples/long.session.json --max-tokens 200"
+  },
+  "keywords": [
+    "agent",
+    "llm",
+    "handoff",
+    "context-compression",
+    "cli",
+    "openai-compatible"
+  ],
+  "author": "ktz03",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ktz03/handoff-pack"
+  },
+  "files": [
+    "bin",
+    "src",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ]
+}
